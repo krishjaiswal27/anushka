@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For You — A Little Site</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="background-elements">
+    <div class="floating-bubble bubble-1"></div>
+    <div class="floating-bubble bubble-2"></div>
+    <div class="floating-bubble bubble-3"></div>
+    <div class="floating-bubble bubble-4"></div>
+  </div>
+  <div class="container">
+    <header class="header">
+      <div class="heart-icon-wrapper">
+        <div class="heart-icon">❤️</div>
+      </div>
+      <h1 class="title-main">from me, to you</h1>
+      <p class="subtitle">a few games, photos and secrets — just for you.</p>
+      <div class="day-counter" id="dayCounter"></div>
+    </header>
+
+    <main id="mainView">
+      <section class="controls">
+        <button id="openGalleryBtn" class="btn-primary">📸 Open Gallery</button>
+        <button id="openMemoryBtn" class="btn-primary">🎮 Play Game to Unlock</button>
+      </section>
+
+      <section class="envelopes" id="secretsList"></section>
+
+      <section class="gallery-grid" id="galleryGrid"></section>
+
+      <div class="footer-quote">"Distance means so little when someone means so much" 💕</div>
+    </main>
+
+    <!-- Wordle-style game modal -->
+    <div id="gameView" class="game-view">
+      <div class="overlay-card game-card" id="gameCard">
+        <div class="game-content">
+          <div class="game-header">
+            <h2 id="gameTitle">Unlock</h2>
+            <p id="gameInstructions" class="game-instructions">Guess the 5-letter word to unlock</p>
+            <div class="hint-section" id="hintSection"></div>
+          </div>
+          <div id="guessesContainer"></div>
+          <div class="keyboard" id="keyboard"></div>
+          <div class="attempts" id="attemptsText">Attempts: <span id="attemptCount">0</span>/6</div>
+          <div class="message" id="gameMessage"></div>
+          <div class="game-back-btn">
+            <button class="back-btn" id="closeGameBtn">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Memory modal -->
+    <div id="memoryView" class="game-view">
+      <div class="overlay-card game-card">
+        <div class="game-content">
+          <h2>Memory Match</h2>
+          <p>Match pairs to reach the target and unlock a secret!</p>
+          <div id="memoryBoard" class="memory-board"></div>
+          <div class="message" id="memoryMessage"></div>
+          <div class="game-back-btn">
+            <button class="back-btn" id="closeMemoryBtn">Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gallery modal (overlay host - content injected dynamically) -->
+    <div id="galleryModal" class="game-view">
+      <div class="overlay-card game-card">
+        <div class="game-content">
+          <div id="largeImageContainer" class="large-image-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- import modules -->
+  <script type="module" src="./memory.js"></script>
+  <script type="module" src="./play.js"></script>
+</body>
+</html>
